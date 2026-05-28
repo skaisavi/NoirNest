@@ -24,4 +24,14 @@ export const services: Service[] = [
     description:
       "Moody creative studios and workspaces designed for focus, filming, content creation, and client meetings.",
   },
+  {
+    title: "Interior Moodboards",
+    description:
+      "High-detail visual direction including colours, textures, furniture references, lighting, and styling notes.",
+  },
+  {
+    title: "Renovation Concepts",
+    description:
+      "Concept-led plans for transforming tired rooms into warm, elevated spaces with stronger atmosphere.",
+  },
 ];

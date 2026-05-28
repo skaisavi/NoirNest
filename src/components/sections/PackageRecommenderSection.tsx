@@ -21,6 +21,10 @@ function getRecommendation(projectType: string, helpLevel: string) {
     return packageRecommendations[3];
   }
 
+  if (projectType === "Studio") {
+    return packageRecommendations[2];
+  }
+
   if (projectType === "Moodboard only" || helpLevel === "Mood direction only") {
     return packageRecommendations[0];
   }

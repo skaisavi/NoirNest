@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export function StickyCTA() {
@@ -12,12 +13,12 @@ export function StickyCTA() {
   return (
     <div className="fixed bottom-4 right-4 z-40 flex max-w-[calc(100%-2rem)] items-center gap-2 rounded-full border border-gold/15 bg-obsidian/82 p-2 pl-4 text-ivory shadow-luxury backdrop-blur-xl">
       <span className="size-2 rounded-full bg-gold" aria-hidden="true" />
-      <a
-        href="#contact"
+      <Link
+        href="/contact"
         className="group text-xs font-extrabold uppercase tracking-[0.1em] text-ivory/78 transition hover:text-ivory"
       >
         Book a consultation <span className="inline-block transition group-hover:translate-x-1">→</span>
-      </a>
+      </Link>
       <button
         type="button"
         aria-label="Dismiss consultation button"

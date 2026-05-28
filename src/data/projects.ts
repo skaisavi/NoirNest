@@ -14,7 +14,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "The Ember Apartment",
-    category: "Private Residence",
+    category: "Apartments",
     filter: "Apartments",
     location: "Kensington, London",
     description:
@@ -28,7 +28,7 @@ export const projects: Project[] = [
   },
   {
     title: "Velvet Room",
-    category: "Bedroom Design",
+    category: "Bedrooms",
     filter: "Bedrooms",
     location: "Chelsea, London",
     description:
@@ -42,7 +42,7 @@ export const projects: Project[] = [
   },
   {
     title: "Cafe Nocturne",
-    category: "Boutique Commercial",
+    category: "Cafes",
     filter: "Cafes",
     location: "Shoreditch, London",
     description:
@@ -56,16 +56,44 @@ export const projects: Project[] = [
   },
   {
     title: "Black Studio",
-    category: "Creative Workspace",
+    category: "Studios",
     filter: "Studios",
     location: "Hackney, London",
     description:
-      "A compact content studio shaped with acoustic softness, dark oak storage, flexible zones, and camera-ready lighting.",
+      "A content studio designed with flexible backdrops, acoustic softness, hidden storage, and dramatic lighting.",
     image:
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop",
     alt: "Moody dark creative studio with desk and warm light",
     mood: "Focused, minimal, cinematic",
     materials: "Dark oak · acoustic fabric · smoked mirror",
     lighting: "Track light · desk pools · soft backlight",
+  },
+  {
+    title: "Sand & Smoke Loft",
+    category: "Apartments",
+    filter: "Apartments",
+    location: "Manchester",
+    description:
+      "A loft refreshed with warm beige textiles, smoked mirrors, sculptural lighting, and minimal furniture.",
+    image:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop",
+    alt: "Warm beige loft interior with sculptural lighting",
+    mood: "Airy, edited, softly dramatic",
+    materials: "Warm beige · smoked mirror · stone",
+    lighting: "Sculptural pendants · curtain glow · table lamps",
+  },
+  {
+    title: "Maison Dusk",
+    category: "Apartments",
+    filter: "Apartments",
+    location: "Notting Hill, London",
+    description:
+      "A full-home interior concept balancing Parisian warmth, black accents, antique brass, and soft stone.",
+    image:
+      "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1200&auto=format&fit=crop",
+    alt: "Elegant dark apartment with soft stone and brass accents",
+    mood: "Parisian, warm, collected",
+    materials: "Soft stone · antique brass · black accents",
+    lighting: "Picture lights · shaded lamps · evening glow",
   },
 ];

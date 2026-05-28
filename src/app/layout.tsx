@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { PageTransition } from "@/components/layout/PageTransition";
+import { Preloader } from "@/components/layout/Preloader";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { StickyCTA } from "@/components/layout/StickyCTA";
 import "./globals.css";
 
 const inter = Inter({
@@ -40,7 +46,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        {children}
+        <Preloader />
+        <ScrollProgress />
+        <Navbar />
+        <main id="main">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        <Footer />
+        <StickyCTA />
       </body>
     </html>
   );
