@@ -1,21 +1,27 @@
-import { BeforeAfterSection } from "@/components/sections/home/BeforeAfterSection";
-import { FeaturedProjectsSection } from "@/components/sections/home/FeaturedProjectsSection";
-import { FinalCTASection } from "@/components/sections/home/FinalCTASection";
-import { HeroSection } from "@/components/sections/home/HeroSection";
-import { ServicesPreviewSection } from "@/components/sections/home/ServicesPreviewSection";
-import { StudioPhilosophySection } from "@/components/sections/home/StudioPhilosophySection";
-import { TestimonialsSection } from "@/components/sections/home/TestimonialsSection";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { PhilosophySection } from "@/components/sections/PhilosophySection";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <StudioPhilosophySection />
-      <ServicesPreviewSection />
-      <FeaturedProjectsSection />
-      <BeforeAfterSection />
-      <TestimonialsSection />
-      <FinalCTASection />
+      <Navbar />
+      <main id="main">
+        <HeroSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <BeforeAfterSection />
+        <PhilosophySection />
+        <TestimonialsSection />
+        <ContactSection />
+      </main>
+      <Footer />
     </>
   );
 }

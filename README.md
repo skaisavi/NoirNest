@@ -1,6 +1,6 @@
 # NoirNest
 
-NoirNest is a dark luxury creative studio website built with Next.js, TypeScript, and Tailwind CSS.
+NoirNest is a single-page dark luxury interior design studio website built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Structure
 
@@ -10,16 +10,32 @@ src/
     layout.tsx
     page.tsx
     globals.css
-    about/page.tsx
-    services/page.tsx
-    projects/page.tsx
-    contact/page.tsx
   components/
     layout/
+      Navbar.tsx
+      Footer.tsx
     sections/
+      HeroSection.tsx
+      ServicesSection.tsx
+      ProjectsSection.tsx
+      BeforeAfterSection.tsx
+      PhilosophySection.tsx
+      TestimonialsSection.tsx
+      ContactSection.tsx
     ui/
+      Container.tsx
+      SectionLabel.tsx
+      Button.tsx
+      GlassCard.tsx
+      ImageFrame.tsx
+      AnimatedSection.tsx
   data/
+    services.ts
+    projects.ts
+    testimonials.ts
   lib/
+    utils.ts
+    animations.ts
 ```
 
 ## Scripts
@@ -37,7 +53,3 @@ npm run dev
 ```
 
 Then open `http://localhost:3000`.
-
-## Deployment
-
-The project is connected to Vercel. Pushing to `main` deploys the site automatically.

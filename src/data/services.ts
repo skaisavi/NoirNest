@@ -1,44 +1,27 @@
 export type Service = {
-  id: string;
   title: string;
   description: string;
-  details: string[];
 };
 
 export const services: Service[] = [
   {
-    id: "brand-identity",
-    title: "Brand Identity",
+    title: "Private Apartment Design",
     description:
-      "Naming, positioning, art direction, typography, palette systems, packaging, and launch-ready guidelines.",
-    details: ["Naming systems", "Visual identity", "Packaging direction"],
+      "Full-room concepts for apartments that need warmth, mood, storage, lighting, and visual calm.",
   },
   {
-    id: "digital-experience",
-    title: "Digital Experience",
+    title: "Bedroom Styling",
     description:
-      "Editorial websites, booking journeys, ecommerce direction, landing pages, and responsive interface systems.",
-    details: ["Website strategy", "Interface design", "Conversion journeys"],
+      "Layered bedroom schemes with soft lighting, hotel-inspired bedding, textured walls, and calm palettes.",
   },
   {
-    id: "product-design",
-    title: "Product Design",
+    title: "Boutique Cafe Interiors",
     description:
-      "UX audits, app flows, component libraries, dashboards, prototypes, and high-fidelity product storytelling.",
-    details: ["UX audits", "Product systems", "Prototype design"],
+      "Atmospheric cafe layouts with seating flow, material palettes, feature lighting, and brand-led details.",
   },
   {
-    id: "launch-direction",
-    title: "Launch Direction",
+    title: "Studio & Workspace Design",
     description:
-      "Campaign concepts, social art direction, pitch decks, investor narratives, and go-to-market creative support.",
-    details: ["Campaign concepts", "Deck systems", "Launch assets"],
+      "Moody creative studios and workspaces designed for focus, filming, content creation, and client meetings.",
   },
 ];
-
-export const addOns = [
-  "Founder deck refinement",
-  "Social launch art direction",
-  "Photography shot lists",
-  "Post-launch design support",
-] as const;

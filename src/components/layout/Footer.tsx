@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
 const footerLinks = [
-  { label: "Work", href: "/projects" },
-  { label: "Contact", href: "/contact" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export function Footer() {
@@ -13,13 +12,13 @@ export function Footer() {
         <small>Copyright {new Date().getFullYear()} NoirNest. Crafted with restraint.</small>
         <nav aria-label="Footer navigation" className="flex gap-5">
           {footerLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className="text-xs font-bold uppercase tracking-[0.08em] transition hover:text-ivory"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
       </Container>

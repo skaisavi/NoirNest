@@ -4,20 +4,20 @@ import { Container } from "@/components/ui/Container";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
-export function ServicesPreviewSection() {
+export function ServicesSection() {
   return (
-    <AnimatedSection className="py-24 md:py-28">
+    <AnimatedSection id="services" className="py-24 md:py-28">
       <Container>
         <div className="mb-9 max-w-3xl">
-          <SectionLabel>Services</SectionLabel>
+          <SectionLabel>Signature Services</SectionLabel>
           <h2 className="font-serif text-4xl font-bold leading-tight text-ivory md:text-6xl">
-            Designed for brands that need more than surface polish.
+            Interior concepts with mood, storage, light, and atmosphere resolved together.
           </h2>
         </div>
         <div className="grid overflow-hidden rounded-lg border border-white/10 bg-white/10 shadow-luxury md:grid-cols-2 xl:grid-cols-4">
           {services.map((service, index) => (
             <GlassCard
-              key={service.id}
+              key={service.title}
               className="min-h-[300px] rounded-none border-0 border-r border-white/10 p-6 transition hover:-translate-y-0.5 hover:bg-panel-soft"
             >
               <span className="mb-14 block text-xs font-extrabold text-gold">

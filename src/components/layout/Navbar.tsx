@@ -1,51 +1,39 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { MobileMenu } from "@/components/layout/MobileMenu";
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
-import { navigationItems } from "@/data/navigation";
 import { cn } from "@/lib/utils";
+
+const navItems = [
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
+  { label: "Philosophy", href: "#philosophy" },
+  { label: "Contact", href: "#contact" },
+];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    document.body.classList.toggle("overflow-hidden", isOpen);
-    return () => document.body.classList.remove("overflow-hidden");
-  }, [isOpen]);
-
-  useEffect(() => {
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("keydown", closeOnEscape);
-    return () => document.removeEventListener("keydown", closeOnEscape);
-  }, []);
-
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
       <Container className="flex min-h-[72px] items-center justify-between">
-        <Link
-          href="/"
+        <a
+          href="#top"
           className="font-serif text-xl font-bold tracking-[0.055em] text-ivory no-underline"
           aria-label="NoirNest home"
         >
           NoirNest
-        </Link>
+        </a>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-6 md:flex">
-          {navigationItems.map((item) => (
-            <Link
+          {navItems.map((item) => (
+            <a
               key={item.href}
               href={item.href}
               className="text-xs font-bold uppercase tracking-[0.08em] text-ivory/68 transition hover:text-ivory"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -73,7 +61,22 @@ export function Navbar() {
           </span>
         </button>
       </Container>
-      <MobileMenu isOpen={isOpen} onNavigate={() => setIsOpen(false)} />
+      {isOpen && (
+        <div className="absolute left-4 right-4 top-[72px] rounded-lg border border-white/10 bg-ink/98 p-2 shadow-luxury md:hidden">
+          <nav aria-label="Mobile navigation" className="grid">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="border-b border-white/[0.08] px-4 py-4 text-xs font-bold uppercase tracking-[0.08em] text-ivory/72 last:border-b-0 hover:text-ivory"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

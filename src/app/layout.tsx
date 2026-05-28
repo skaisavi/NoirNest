@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-import { Footer } from "@/components/layout/Footer";
-import { Navbar } from "@/components/layout/Navbar";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,15 +16,15 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "NoirNest - Luxury Creative Studio",
+    default: "NoirNest - Dark Luxury Interior Design Studio",
     template: "%s - NoirNest",
   },
   description:
-    "NoirNest is a luxury creative studio for brand identity, product design, and immersive digital experiences.",
+    "NoirNest is a dark luxury interior design studio for apartments, bedrooms, boutique cafes, and creative workspaces.",
   openGraph: {
-    title: "NoirNest - Luxury Creative Studio",
+    title: "NoirNest - Dark Luxury Interior Design Studio",
     description:
-      "Brand identity, product design, and digital experiences for selective founders and hospitality teams.",
+      "Warm, cinematic interior concepts for compact homes, bedrooms, boutique cafes, and creative studios.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop",
@@ -42,9 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        <Navbar />
-        <main id="main">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

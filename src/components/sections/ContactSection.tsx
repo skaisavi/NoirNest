@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
-export function ContactFormSection() {
+export function ContactSection() {
   const [status, setStatus] = useState("");
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -19,21 +19,21 @@ export function ContactFormSection() {
       return;
     }
 
-    setStatus("Message sent. I will reply within 48 hours.");
+    setStatus("Enquiry noted. NoirNest will reply within 48 hours.");
     form.reset();
   }
 
   return (
-    <section className="py-24 md:py-28">
+    <section id="contact" className="border-t border-white/10 bg-ink py-24 md:py-28">
       <Container className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <SectionLabel>Enquiries</SectionLabel>
+          <SectionLabel>Contact CTA</SectionLabel>
           <h2 className="font-serif text-4xl font-bold leading-tight text-ivory md:text-6xl">
-            A concise first note is enough.
+            Tell us what the room needs to become.
           </h2>
           <p className="mt-6 text-base leading-8 text-ivory/68">
-            For commissions, collaborations, and press enquiries, share the context, desired
-            timeline, and what needs to change.
+            Share the room type, location, timeline, and what currently feels unresolved. A few
+            clear details are enough for the first conversation.
           </p>
           <address className="mt-6 not-italic text-ivory/68">
             Email:{" "}
@@ -71,16 +71,16 @@ export function ContactFormSection() {
             </div>
             <label className="grid gap-2">
               <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-ivory/78">
-                Project type
+                Space type
               </span>
               <select
-                name="projectType"
+                name="spaceType"
                 className="rounded-md border border-white/10 bg-obsidian px-4 py-3 text-ivory transition hover:border-white/20 focus:border-gold/60"
               >
-                <option>Brand identity</option>
-                <option>Website or product</option>
-                <option>Launch campaign</option>
-                <option>Not sure yet</option>
+                <option>Private apartment</option>
+                <option>Bedroom styling</option>
+                <option>Boutique cafe</option>
+                <option>Studio or workspace</option>
               </select>
             </label>
             <label className="grid gap-2">
@@ -95,7 +95,7 @@ export function ContactFormSection() {
               />
             </label>
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Button type="submit">Send Message</Button>
+              <Button type="submit">Send Enquiry</Button>
               <p role="status" aria-live="polite" className="text-sm text-gold">
                 {status}
               </p>

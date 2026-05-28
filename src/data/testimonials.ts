@@ -1,20 +1,22 @@
 export type Testimonial = {
   quote: string;
-  name: string;
-  role: string;
+  client: string;
 };
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "NoirNest gave our launch the kind of discipline we could feel in every screen, label, and investor conversation.",
-    name: "Amara Chen",
-    role: "Founder at Maison Aure",
+      "NoirNest made our apartment feel like a boutique hotel without losing the comfort of home.",
+    client: "Amara L.",
   },
   {
     quote:
-      "The work felt edited, senior, and commercially useful. Nothing decorative survived unless it earned its place.",
-    name: "Elian Roth",
-    role: "Product Lead at The Ledger",
+      "The moodboards were beautiful, but the real magic was how practical every detail felt.",
+    client: "Theo M.",
+  },
+  {
+    quote:
+      "Our cafe finally has an atmosphere people remember. The design completely changed how customers use the space.",
+    client: "Lena R.",
   },
 ];
