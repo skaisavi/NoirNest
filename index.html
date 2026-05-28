@@ -17,9 +17,10 @@
     <meta name="description" content="NoirNest is a luxury creative studio for brand identity, product design, and immersive digital experiences." />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="NoirNest home">NoirNest</a>
+        <a class="brand" href="#main" aria-label="NoirNest home">NoirNest</a>
         <nav class="nav" id="nav" aria-label="Main Navigation">
           <a href="#studio">Studio</a>
           <a href="#services">Services</a>
@@ -27,13 +28,13 @@
           <a href="#contact">Contact</a>
         </nav>
         <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
       </div>
     </header>
 
-    <main id="top">
+    <main id="main">
       <section class="hero">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="container hero-inner">
@@ -117,7 +118,7 @@
         <div class="container projects-grid">
           <article class="project featured-project">
             <a href="projects/maison-aure.html">
-              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1400&auto=format&fit=crop" alt="Maison Aure perfume display">
+              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1400&auto=format&fit=crop" alt="Maison Aure perfume display" loading="lazy" decoding="async">
               <div class="project-body">
                 <p class="project-kicker">Identity / Packaging</p>
                 <h3>Maison Aure</h3>
@@ -127,7 +128,7 @@
           </article>
           <article class="project">
             <a href="projects/the-ledger.html">
-              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="The Ledger workspace and product planning">
+              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="The Ledger workspace and product planning" loading="lazy" decoding="async">
               <div class="project-body">
                 <p class="project-kicker">Product / Fintech</p>
                 <h3>The Ledger</h3>
@@ -137,7 +138,7 @@
           </article>
           <article class="project">
             <a href="projects/aurum-retreat.html">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Aurum Retreat coastline">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Aurum Retreat coastline" loading="lazy" decoding="async">
               <div class="project-body">
                 <p class="project-kicker">Hospitality / Web</p>
                 <h3>Aurum Retreat</h3>
@@ -231,9 +232,9 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <small>Copyright <span id="year"></span> NoirNest. Crafted with restraint.</small>
-        <nav class="social" aria-label="Social links">
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
+        <nav class="social" aria-label="Footer navigation">
+          <a href="#projects">Work</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </footer>

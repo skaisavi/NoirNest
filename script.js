@@ -11,12 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeNav = () => {
       nav.classList.remove("open");
       toggle.classList.remove("open");
+      document.body.classList.remove("nav-is-open");
       toggle.setAttribute("aria-expanded", "false");
     };
 
     toggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("open");
       toggle.classList.toggle("open", isOpen);
+      document.body.classList.toggle("nav-is-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
 
@@ -29,6 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
         closeNav();
       }
     });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.classList.contains("open")) {
+        return;
+      }
+
+      const target = event.target;
+      if (target instanceof Node && !nav.contains(target) && !toggle.contains(target)) {
+        closeNav();
+      }
+    });
   }
 
   const form = document.getElementById("contactForm");
@@ -38,9 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      const name = form.elements.name.value.trim();
-      const email = form.elements.email.value.trim();
-      const message = form.elements.message.value.trim();
+      if (!form.checkValidity()) {
+        status.textContent = "Please complete the required fields.";
+        status.style.color = "var(--accent)";
+        form.reportValidity();
+        return;
+      }
+
+      const name = form.querySelector("#name").value.trim();
+      const email = form.querySelector("#email").value.trim();
+      const message = form.querySelector("#message").value.trim();
 
       if (!name || !email || !message) {
         status.textContent = "Please complete all required fields.";
