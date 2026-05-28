@@ -16,12 +16,12 @@ export function FounderStorySection() {
         />
         <Reveal>
           <GlassCard className="p-7 md:p-9">
-            <SectionLabel>Mara Vey</SectionLabel>
+            <SectionLabel>Skaiste Savitri</SectionLabel>
             <h2 className="font-serif text-5xl font-bold leading-none text-ivory">
               Creative Director & Interior Stylist
             </h2>
             <p className="mt-6 text-base leading-8 text-ivory/68">
-              Mara founded NoirNest to create interiors that feel cinematic without becoming cold.
+              Skaiste Savitri founded NoirNest to create interiors that feel cinematic without becoming cold.
               Her work focuses on warm minimalism, layered lighting, dark materials, and rooms that
               feel deeply personal.
             </p>
