@@ -10,16 +10,22 @@ const principles = [
 
 export function PhilosophySection() {
   return (
-    <section id="philosophy" className="border-y border-white/10 bg-[linear-gradient(180deg,#0d0b0a,#110e0c)] py-24 md:py-28">
+    <section
+      id="philosophy"
+      className="border-y border-gold/10 bg-[radial-gradient(circle_at_12%_10%,rgba(193,161,105,0.08),transparent_25rem),linear-gradient(180deg,#0d0b0a,#110e0c)] py-28 md:py-36"
+    >
       <Container>
-        <div className="grid gap-10 md:grid-cols-[0.86fr_1.14fr]">
+        <div className="grid gap-12 md:grid-cols-[0.86fr_1.14fr]">
           <div>
             <SectionLabel>Studio Philosophy</SectionLabel>
-            <h2 className="font-serif text-4xl font-bold leading-tight text-ivory md:text-6xl">
+            <h2 className="font-serif text-[clamp(2.5rem,5.4vw,5rem)] font-bold leading-[1] text-ivory">
               Dark interiors should feel intimate, never heavy.
             </h2>
           </div>
-          <div className="space-y-5 text-base leading-8 text-ivory/68">
+          <div className="space-y-6 text-base leading-8 text-ivory/68">
+            <p className="font-serif text-3xl leading-tight text-ivory md:text-5xl">
+              A room should lower your shoulders before it asks to be admired.
+            </p>
             <p>
               NoirNest designs rooms around atmosphere and daily use: where coats land, how evening
               light falls, what clients see on arrival, and how a small space can feel composed
@@ -34,8 +40,9 @@ export function PhilosophySection() {
         </div>
         <div className="mt-14 grid gap-4 md:grid-cols-3">
           {principles.map((principle) => (
-            <GlassCard key={principle} className="p-6">
-              <p className="font-serif text-2xl font-bold text-ivory">{principle}</p>
+            <GlassCard key={principle} className="p-6 md:p-7">
+              <div className="mb-5 h-px w-12 bg-gold/55" />
+              <p className="font-serif text-2xl font-bold leading-tight text-ivory">{principle}</p>
             </GlassCard>
           ))}
         </div>

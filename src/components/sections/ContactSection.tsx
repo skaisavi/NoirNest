@@ -24,11 +24,14 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="border-t border-white/10 bg-ink py-24 md:py-28">
-      <Container className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+    <section
+      id="contact"
+      className="border-t border-gold/10 bg-[radial-gradient(circle_at_80%_20%,rgba(193,161,105,0.09),transparent_25rem),linear-gradient(180deg,#0d0b0a,#050404)] py-28 md:py-36"
+    >
+      <Container className="grid gap-12 md:grid-cols-[0.86fr_1.14fr]">
         <div>
-          <SectionLabel>Contact CTA</SectionLabel>
-          <h2 className="font-serif text-4xl font-bold leading-tight text-ivory md:text-6xl">
+          <SectionLabel>Private Consultation</SectionLabel>
+          <h2 className="font-serif text-[clamp(2.7rem,6vw,5.7rem)] font-bold leading-[0.98] text-ivory">
             Tell us what the room needs to become.
           </h2>
           <p className="mt-6 text-base leading-8 text-ivory/68">
@@ -42,7 +45,7 @@ export function ContactSection() {
             </a>
           </address>
         </div>
-        <GlassCard className="p-6">
+        <GlassCard className="p-6 md:p-8">
           <form onSubmit={handleSubmit} className="grid gap-4" noValidate>
             <div className="grid gap-4 md:grid-cols-2">
               <label className="grid gap-2">
@@ -53,7 +56,7 @@ export function ContactSection() {
                   required
                   name="name"
                   autoComplete="name"
-                  className="rounded-md border border-white/10 bg-obsidian px-4 py-3 text-ivory transition hover:border-white/20 focus:border-gold/60"
+                  className="rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
                 />
               </label>
               <label className="grid gap-2">
@@ -65,7 +68,7 @@ export function ContactSection() {
                   type="email"
                   name="email"
                   autoComplete="email"
-                  className="rounded-md border border-white/10 bg-obsidian px-4 py-3 text-ivory transition hover:border-white/20 focus:border-gold/60"
+                  className="rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
                 />
               </label>
             </div>
@@ -75,7 +78,7 @@ export function ContactSection() {
               </span>
               <select
                 name="spaceType"
-                className="rounded-md border border-white/10 bg-obsidian px-4 py-3 text-ivory transition hover:border-white/20 focus:border-gold/60"
+                className="rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
               >
                 <option>Private apartment</option>
                 <option>Bedroom styling</option>
@@ -91,11 +94,13 @@ export function ContactSection() {
                 required
                 name="message"
                 rows={6}
-                className="resize-y rounded-md border border-white/10 bg-obsidian px-4 py-3 text-ivory transition hover:border-white/20 focus:border-gold/60"
+                className="resize-y rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
               />
             </label>
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Button type="submit">Send Enquiry</Button>
+              <Button type="submit" className="w-full sm:w-auto">
+                Send Enquiry
+              </Button>
               <p role="status" aria-live="polite" className="text-sm text-gold">
                 {status}
               </p>

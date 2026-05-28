@@ -10,9 +10,9 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "border-transparent bg-gradient-to-b from-gold to-gold-dark text-ink shadow-[0_12px_28px_rgba(128,100,57,0.12)] hover:shadow-[0_18px_36px_rgba(128,100,57,0.18)]",
+    "border-transparent bg-gradient-to-b from-[#d1b783] to-gold-dark text-ink shadow-[0_16px_34px_rgba(128,100,57,0.2)] hover:shadow-[0_22px_44px_rgba(128,100,57,0.26)]",
   outline:
-    "border-white/10 bg-ivory/[0.035] text-ivory shadow-none hover:border-gold/35",
+    "border-gold/18 bg-ivory/[0.035] text-ivory shadow-none backdrop-blur hover:border-gold/45 hover:bg-ivory/[0.06]",
 };
 
 export function Button({
@@ -23,7 +23,7 @@ export function Button({
   className,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex min-h-12 items-center justify-center rounded-md border px-5 py-3 text-sm font-extrabold no-underline transition duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold/70",
+    "inline-flex min-h-12 items-center justify-center rounded-full border px-6 py-3 text-xs font-extrabold uppercase tracking-[0.1em] no-underline transition duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold/70",
     variants[variant],
     className,
   );
