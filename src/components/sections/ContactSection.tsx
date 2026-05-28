@@ -32,11 +32,11 @@ export function ContactSection() {
         <div>
           <SectionLabel>Private Consultation</SectionLabel>
           <h2 className="font-serif text-[clamp(2.7rem,6vw,5.7rem)] font-bold leading-[0.98] text-ivory">
-            Tell us what the room needs to become.
+            Start with the room you cannot stop thinking about.
           </h2>
           <p className="mt-6 text-base leading-8 text-ivory/68">
-            Share the room type, location, timeline, and what currently feels unresolved. A few
-            clear details are enough for the first conversation.
+            Tell us what feels unfinished. We&apos;ll help shape it into a space with depth, warmth,
+            and quiet luxury.
           </p>
           <address className="mt-6 not-italic text-ivory/68">
             Email:{" "}
@@ -72,20 +72,70 @@ export function ContactSection() {
                 />
               </label>
             </div>
-            <label className="grid gap-2">
-              <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-ivory/78">
-                Space type
-              </span>
-              <select
-                name="spaceType"
-                className="rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
-              >
-                <option>Private apartment</option>
-                <option>Bedroom styling</option>
-                <option>Boutique cafe</option>
-                <option>Studio or workspace</option>
-              </select>
-            </label>
+            <div className="grid gap-4 md:grid-cols-2">
+              <label className="grid gap-2">
+                <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-ivory/78">
+                  Project type
+                </span>
+                <select
+                  name="projectType"
+                  className="rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
+                >
+                  <option>Apartment</option>
+                  <option>Bedroom</option>
+                  <option>Cafe</option>
+                  <option>Studio</option>
+                  <option>Moodboard</option>
+                  <option>Renovation concept</option>
+                </select>
+              </label>
+              <label className="grid gap-2">
+                <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-ivory/78">
+                  Preferred mood
+                </span>
+                <select
+                  name="preferredMood"
+                  className="rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
+                >
+                  <option>Smoke & Walnut</option>
+                  <option>Sand & Shadow</option>
+                  <option>Velvet Dusk</option>
+                  <option>Marble Noir</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <label className="grid gap-2">
+                <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-ivory/78">
+                  Budget range
+                </span>
+                <select
+                  name="budgetRange"
+                  className="rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
+                >
+                  <option>Under £1,000</option>
+                  <option>£1,000 - £2,500</option>
+                  <option>£2,500 - £5,000</option>
+                  <option>£5,000 - £10,000</option>
+                  <option>£10,000+</option>
+                </select>
+              </label>
+              <label className="grid gap-2">
+                <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-ivory/78">
+                  Timeline
+                </span>
+                <select
+                  name="timeline"
+                  className="rounded-lg border border-gold/10 bg-obsidian/80 px-4 py-3 text-ivory transition hover:border-gold/25 focus:border-gold/60"
+                >
+                  <option>This month</option>
+                  <option>1-3 months</option>
+                  <option>3-6 months</option>
+                  <option>Just exploring</option>
+                </select>
+              </label>
+            </div>
             <label className="grid gap-2">
               <span className="text-xs font-extrabold uppercase tracking-[0.12em] text-ivory/78">
                 Message

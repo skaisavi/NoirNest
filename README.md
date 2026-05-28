@@ -17,9 +17,12 @@ src/
     sections/
       HeroSection.tsx
       ServicesSection.tsx
+      MaterialPaletteSection.tsx
       ProjectsSection.tsx
-      BeforeAfterSection.tsx
+      BeforeAfterSliderSection.tsx
+      MoodQuizSection.tsx
       PhilosophySection.tsx
+      PackageRecommenderSection.tsx
       TestimonialsSection.tsx
       ContactSection.tsx
     ui/
@@ -29,10 +32,15 @@ src/
       GlassCard.tsx
       ImageFrame.tsx
       AnimatedSection.tsx
+      OptionCard.tsx
+      Swatch.tsx
   data/
     services.ts
     projects.ts
     testimonials.ts
+    palettes.ts
+    quizResults.ts
+    packages.ts
   lib/
     utils.ts
     animations.ts

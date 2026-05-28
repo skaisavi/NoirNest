@@ -1,11 +1,27 @@
+"use client";
+
 import Image from "next/image";
+import { useMemo, useState } from "react";
 import { projects } from "@/data/projects";
 import { Container } from "@/components/ui/Container";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/utils";
 
+const filters = ["All", "Apartments", "Bedrooms", "Cafes", "Studios"] as const;
+type ProjectFilter = (typeof filters)[number];
+
 export function ProjectsSection() {
+  const [activeFilter, setActiveFilter] = useState<ProjectFilter>("All");
+
+  const filteredProjects = useMemo(
+    () =>
+      activeFilter === "All"
+        ? projects
+        : projects.filter((project) => project.filter === activeFilter),
+    [activeFilter],
+  );
+
   return (
     <section
       id="projects"
@@ -24,8 +40,26 @@ export function ProjectsSection() {
             function, and the material decisions that make the space memorable.
           </p>
         </div>
+        <div className="mb-8 flex flex-wrap gap-3">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              type="button"
+              aria-pressed={activeFilter === filter}
+              onClick={() => setActiveFilter(filter)}
+              className={cn(
+                "rounded-full border px-4 py-2 text-xs font-extrabold uppercase tracking-[0.1em] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold/70",
+                activeFilter === filter
+                  ? "border-gold/55 bg-gold/12 text-ivory"
+                  : "border-gold/12 bg-ivory/[0.025] text-ivory/58 hover:border-gold/35 hover:text-ivory",
+              )}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
         <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <GlassCard
               key={project.title}
               className={cn(
@@ -49,6 +83,25 @@ export function ProjectsSection() {
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,4,4,0.02)_10%,rgba(5,4,4,0.74)_100%)]" />
                 <div className="absolute left-5 top-5 rounded-full border border-gold/20 bg-obsidian/45 px-3 py-1 text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-gold backdrop-blur">
                   {project.category}
+                </div>
+                <div className="absolute inset-x-5 bottom-5 translate-y-4 rounded-xl border border-gold/12 bg-obsidian/72 p-4 opacity-0 backdrop-blur-xl transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                  <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-gold">
+                    Explore atmosphere
+                  </p>
+                  <dl className="mt-3 grid gap-2 text-xs leading-5 text-ivory/72">
+                    <div>
+                      <dt className="text-ivory/42">Mood</dt>
+                      <dd>{project.mood}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-ivory/42">Materials</dt>
+                      <dd>{project.materials}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-ivory/42">Lighting</dt>
+                      <dd>{project.lighting}</dd>
+                    </div>
+                  </dl>
                 </div>
               </div>
               <div className="p-6 md:p-7">
