@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MagneticButton } from "@/components/motion/MagneticButton";
 import { cn } from "@/lib/utils";
 
 type ButtonProps = {
@@ -33,21 +34,21 @@ export function Button({
     if (href.startsWith("/")) {
       return (
         <Link href={href} className={classes}>
-          {children}
+          <MagneticButton>{children}</MagneticButton>
         </Link>
       );
     }
 
     return (
       <a href={href} className={classes}>
-        {children}
+        <MagneticButton>{children}</MagneticButton>
       </a>
     );
   }
 
   return (
     <button type={type} className={classes}>
-      {children}
+      <MagneticButton>{children}</MagneticButton>
     </button>
   );
 }

@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { Reveal } from "@/components/motion/Reveal";
+import { StaggerReveal } from "@/components/motion/StaggerReveal";
 
 export function FeaturedProjectsSection() {
   return (
     <section className="border-y border-gold/10 bg-ink py-24 md:py-32">
       <Container>
-        <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <Reveal className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <SectionLabel>Featured projects</SectionLabel>
             <h2 className="max-w-4xl font-serif text-5xl font-bold leading-none text-ivory">
@@ -17,10 +19,10 @@ export function FeaturedProjectsSection() {
             </h2>
           </div>
           <Button href="/projects" variant="outline">Open Gallery</Button>
-        </div>
-        <div className="grid gap-5 md:grid-cols-3">
+        </Reveal>
+        <StaggerReveal className="grid gap-5 md:grid-cols-3">
           {projects.slice(0, 3).map((project) => (
-            <GlassCard key={project.title} className="group overflow-hidden">
+            <GlassCard key={project.title} className="group overflow-hidden" as="article">
               <div className="relative h-72">
                 <Image src={project.image} alt={project.alt} fill sizes="33vw" className="object-cover brightness-[.78] transition duration-700 group-hover:scale-105" />
               </div>
@@ -30,7 +32,7 @@ export function FeaturedProjectsSection() {
               </div>
             </GlassCard>
           ))}
-        </div>
+        </StaggerReveal>
       </Container>
     </section>
   );

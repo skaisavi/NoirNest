@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { projects } from "@/data/projects";
 import { Container } from "@/components/ui/Container";
@@ -58,15 +59,22 @@ export function ProjectsSection() {
             </button>
           ))}
         </div>
-        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          {filteredProjects.map((project, index) => (
-            <GlassCard
+        <motion.div layout className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+            <motion.div
               key={project.title}
+              layout
+              initial={{ opacity: 0, y: 18, filter: "blur(5px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -12, filter: "blur(4px)" }}
+              transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
               className={cn(
                 "group overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:border-gold/35",
                 index === 0 && "lg:row-span-2",
               )}
             >
+              <GlassCard className="h-full overflow-hidden border-0 bg-transparent">
               <div
                 className={cn(
                   "relative h-[340px] overflow-hidden bg-ink md:h-[390px]",
@@ -112,10 +120,15 @@ export function ProjectsSection() {
                   {project.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-ivory/66">{project.description}</p>
+                <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.12em] text-gold/70">
+                  View mood <span className="inline-block transition group-hover:translate-x-1">→</span>
+                </p>
               </div>
-            </GlassCard>
+              </GlassCard>
+            </motion.div>
           ))}
-        </div>
+          </AnimatePresence>
+        </motion.div>
       </Container>
     </section>
   );

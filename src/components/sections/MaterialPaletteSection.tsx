@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { palettes } from "@/data/palettes";
 import { Container } from "@/components/ui/Container";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -47,18 +48,36 @@ export function MaterialPaletteSection() {
             ))}
           </div>
         </div>
-        <GlassCard className="mt-10 grid gap-8 p-6 md:grid-cols-[0.8fr_1.2fr] md:p-8">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-gold">
-              {activePalette.name}
-            </p>
-            <p className="mt-4 text-lg leading-8 text-ivory/72">{activePalette.description}</p>
-          </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
-            {activePalette.swatches.map((swatch) => (
-              <Swatch key={swatch.label} {...swatch} />
-            ))}
-          </div>
+        <GlassCard className="mt-10 overflow-hidden p-6 md:p-8">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activePalette.name}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
+              className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]"
+            >
+              <div>
+                <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-gold">
+                  {activePalette.name}
+                </p>
+                <p className="mt-4 text-lg leading-8 text-ivory/72">{activePalette.description}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
+                {activePalette.swatches.map((swatch, index) => (
+                  <motion.div
+                    key={swatch.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.045, duration: 0.35 }}
+                  >
+                    <Swatch {...swatch} />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </GlassCard>
       </Container>
     </section>

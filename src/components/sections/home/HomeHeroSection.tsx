@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { TextReveal } from "@/components/motion/TextReveal";
 
 export function HomeHeroSection() {
   return (
@@ -15,7 +16,7 @@ export function HomeHeroSection() {
       <Container>
         <SectionLabel>Dark luxury interior studio</SectionLabel>
         <h1 className="max-w-5xl font-serif text-[clamp(3.5rem,9vw,8rem)] font-bold leading-[.94] text-ivory">
-          Dark interiors, softly composed for modern living.
+          <TextReveal text="Dark interiors, softly composed for modern living." />
         </h1>
         <p className="mt-7 max-w-2xl text-lg leading-8 text-ivory/72">
           NoirNest designs cinematic apartments, bedrooms, cafes, and private studios with warm

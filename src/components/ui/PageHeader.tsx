@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { TextReveal } from "@/components/motion/TextReveal";
 import { cn } from "@/lib/utils";
 
 type PageHeaderProps = {
@@ -21,7 +22,7 @@ export function PageHeader({ label, title, description, cta, className }: PageHe
       <Container>
         <SectionLabel>{label}</SectionLabel>
         <h1 className="max-w-5xl font-serif text-[clamp(3.2rem,8vw,7rem)] font-bold leading-[0.96] text-ivory">
-          {title}
+          <TextReveal text={title} />
         </h1>
         <p className="mt-7 max-w-2xl text-base leading-8 text-ivory/68 md:text-lg">{description}</p>
         {cta ? <div className="mt-9">{cta}</div> : null}

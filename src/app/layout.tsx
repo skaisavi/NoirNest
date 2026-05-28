@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import { PageTransition } from "@/components/layout/PageTransition";
 import { Preloader } from "@/components/layout/Preloader";
-import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { StickyCTA } from "@/components/layout/StickyCTA";
+import { CursorGlow } from "@/components/motion/CursorGlow";
+import { LenisProvider } from "@/components/motion/LenisProvider";
+import { PageTransition } from "@/components/motion/PageTransition";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import "./globals.css";
 
 const inter = Inter({
@@ -43,17 +45,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
-        <Preloader />
-        <ScrollProgress />
-        <Navbar />
-        <main id="main">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
-        <StickyCTA />
+        <LenisProvider>
+          <a className="skip-link" href="#main">
+            Skip to content
+          </a>
+          <Preloader />
+          <ScrollProgress />
+          <CursorGlow />
+          <Navbar />
+          <main id="main">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+          <StickyCTA />
+        </LenisProvider>
       </body>
     </html>
   );

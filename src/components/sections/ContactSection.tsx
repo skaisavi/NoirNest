@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -151,9 +152,21 @@ export function ContactSection() {
               <Button type="submit" className="w-full sm:w-auto">
                 Send Enquiry
               </Button>
-              <p role="status" aria-live="polite" className="text-sm text-gold">
-                {status}
-              </p>
+              <AnimatePresence>
+                {status ? (
+                  <motion.p
+                    key={status}
+                    role="status"
+                    aria-live="polite"
+                    className="text-sm text-gold"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                  >
+                    {status}
+                  </motion.p>
+                ) : null}
+              </AnimatePresence>
             </div>
           </form>
         </GlassCard>

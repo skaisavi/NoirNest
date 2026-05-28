@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { journalArticles } from "@/data/journal";
 import { Container } from "@/components/ui/Container";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { ParallaxImage } from "@/components/motion/ParallaxImage";
 
 export function FeaturedArticleSection() {
   const featured = journalArticles[0];
@@ -13,7 +13,13 @@ export function FeaturedArticleSection() {
         <SectionLabel>Featured article</SectionLabel>
         <GlassCard className="grid overflow-hidden md:grid-cols-[1.1fr_.9fr]">
           <div className="relative min-h-[420px]">
-            <Image src={featured.image} alt={featured.alt} fill sizes="55vw" className="object-cover brightness-[.78]" />
+            <ParallaxImage
+              src={featured.image}
+              alt={featured.alt}
+              sizes="55vw"
+              className="h-full min-h-[420px]"
+              imageClassName="brightness-[.78] contrast-110 saturate-[.84]"
+            />
           </div>
           <div className="p-8 md:p-10">
             <p className="text-xs font-bold uppercase tracking-[.12em] text-gold">{featured.category} · {featured.readTime}</p>

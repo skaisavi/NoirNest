@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { packageRecommendations } from "@/data/packages";
 import { Container } from "@/components/ui/Container";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -108,26 +109,35 @@ export function PackageRecommenderSection() {
             </fieldset>
           </GlassCard>
 
-          <GlassCard className="p-7">
+          <GlassCard className="overflow-hidden p-7">
             <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-gold">
               Recommended package
             </p>
-            <h3 className="mt-5 font-serif text-4xl font-bold leading-tight text-ivory">
-              {recommendation.name}
-            </h3>
-            <p className="mt-5 text-base leading-8 text-ivory/70">{recommendation.explanation}</p>
-            <div className="mt-6 border-t border-gold/10 pt-5">
-              <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-ivory/42">
-                Best for
-              </p>
-              <p className="mt-2 text-sm leading-7 text-ivory/68">{recommendation.bestFor}</p>
-            </div>
-            <p className="mt-6 font-serif text-3xl font-bold text-gold">{recommendation.range}</p>
-            <p className="mt-4 text-xs leading-6 text-ivory/48">
-              Final pricing depends on scope, room size, sourcing depth, and timeline. Selected:
-              {" "}
-              {roomSize.toLowerCase()} {projectType.toLowerCase()}.
-            </p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={recommendation.name}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <h3 className="mt-5 font-serif text-4xl font-bold leading-tight text-ivory">
+                  {recommendation.name}
+                </h3>
+                <p className="mt-5 text-base leading-8 text-ivory/70">{recommendation.explanation}</p>
+                <div className="mt-6 border-t border-gold/10 pt-5">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-ivory/42">
+                    Best for
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-ivory/68">{recommendation.bestFor}</p>
+                </div>
+                <p className="mt-6 font-serif text-3xl font-bold text-gold">{recommendation.range}</p>
+                <p className="mt-4 text-xs leading-6 text-ivory/48">
+                  Final pricing depends on scope, room size, sourcing depth, and timeline. Selected:{" "}
+                  {roomSize.toLowerCase()} {projectType.toLowerCase()}.
+                </p>
+              </motion.div>
+            </AnimatePresence>
           </GlassCard>
         </div>
       </Container>
